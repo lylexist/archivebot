@@ -34,8 +34,9 @@ if config['telegram']['userbot']:
     NAME = 'archivebot'
 else:
     NAME = config['telegram']['api_key'].split(':')[0]
+PROXY = (socks.SOCKS5,config['download']['proxy_server'],config['download']['proxy_port'])
 
-archive = TelegramClient(NAME, config['telegram']['app_api_id'], config['telegram']['app_api_hash'])
+archive = TelegramClient(NAME, config['telegram']['app_api_id'], config['telegram']['app_api_hash'],proxy=PROXY)
 
 # Ensure save directory for files exists
 if not os.path.exists(config['download']['target_dir']):

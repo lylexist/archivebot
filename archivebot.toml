@@ -18,3 +18,8 @@ sentry_token = ""
 # Default for downloaded files
 allowed_types = [ "document", "photo",]
 target_dir = "/home/user/archivebot/"
+
+[proxy]
+switch = False 
+proxy_server = "127.0.0.1"
+proxy_port = 1080
